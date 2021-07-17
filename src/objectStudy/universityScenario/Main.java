@@ -18,15 +18,17 @@ public class Main {
         Course javaProgramming = new Course(2, "javaProgramming");
         Course database = new Course(3,"database");
 
-        //담당교수 지정
+        //시나리오 흐름
         dataStructure.addProfessor("dataStructure",jiwon);
         jiwon.chargeProfessorName(dataStructure);
         doori.registrationCourse(dataStructure);
         kori.registrationCourse(dataStructure);
+        //중복체크
+        doori.registrationCourse(dataStructure);
+        doori.registrationCourse(dataStructure);
+        kori.registrationCourse(dataStructure);
+        // 수업시작
         jiwon.startCourse(dataStructure);
 
-
-        /*doori.registrationCourse(dataStructure);
-        jiwon.startCourse(dataStructure);*/
     }
 }

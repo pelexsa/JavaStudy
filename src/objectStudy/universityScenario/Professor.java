@@ -24,6 +24,6 @@ public class Professor {
     // {교수_이름} 교수님이 {수업_이름}(을)를 시작합니다.
     public void startCourse(Course course) {
         System.out.println(this.professorName + "교수님이 " + this.courseName + "을 시작합니다.");
-        // Student.participationCourse(course);
+        Student.participationCourse(course);
     }
 }
