@@ -81,7 +81,7 @@ public class Student {
     // List 0 , List 1
     public void changeMajorToMinor(Student student, Major major){
         if(student.major.get(0).majorId == major.majorId){
-            System.out.println("전공과목이 사라져 부전공으로 전공 변경 요청");
+            System.out.println(student.studentName+"님, 전공과목이 사라져 부전공으로 전공 변경 요청 부탁 드려요");
         }
     }
 }

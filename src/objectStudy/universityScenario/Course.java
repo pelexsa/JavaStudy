@@ -8,13 +8,14 @@ public class Course {
     Major major;
     String courseName;
     String professorName;
-    ArrayList<Student> students = new ArrayList<Student>();
+    ArrayList<Student> students;
 
     public Course(int courseId, String courseName, int grade, Major major) {
         this.courseId = courseId;
         this.courseName = courseName;
         this.grade = grade;
         this.major = major;
+        this.students = new ArrayList<Student>();
         major.courses.add(this);
     }
 
@@ -28,13 +29,18 @@ public class Course {
     // 수강 학생이 추가된다.
     // {수업_이름}에 {학생_이름} 학생이 수강 신청하였습니다.
     public boolean addStudent(Student student) {
-        if (students.contains(students)) {
-            return false;
-        } else {
-            students.add(student);
-            System.out.println(this.courseName + "에 " + student.studentName + " 학생이 수강 신청하였습니다.");
-            return true;
-        }
+        students.add(student);
+        System.out.println(this.courseName + "에 " + student.studentName + " 학생이 수강 신청하였습니다.");
+        return true;
+        // ??
+        //System.out.println("student = " + student.toString());
+//        if(students.contains(student)) {
+//            return false;
+//        }
+//        else {
+//            students.add(student);
+//            System.out.println(this.courseName + "에 " + student.studentName + " 학생이 수강 신청하였습니다.");
+//        }
     }
 
     // 학생들 수업 참여 알림
@@ -45,9 +51,9 @@ public class Course {
     }
 
     // 학과에 포함된 학생들에게 부전공 전환요청
-    public void ChangeMajorForStudent(Course course, Major major){
-        for(int i=0; i<course.students.size(); i++){
-            course.students.get(i).changeMajorToMinor(course.students.get(i),major);
+    public void ChangeMajorForStudent(Course course, Major major) {
+        for (int i = 0; i < course.students.size(); i++) {
+            course.students.get(i).changeMajorToMinor(course.students.get(i), major);
         }
     }
 }

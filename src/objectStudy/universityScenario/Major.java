@@ -28,10 +28,8 @@ public class Major {
 
     // 학과 삭제
     public void deleteMajor(Major major) {
-        for(int i =0; i<major.courses.size(); i++){
-            major.courses.get(i).ChangeMajorForStudent(major.courses.get(i),major);
-        }
-        major = null;
         System.out.println(major.name + ", 해당 과가 삭제되었습니다.");
+        major.courses.get(0).ChangeMajorForStudent(major.courses.get(0),major);
+        major = null;
     }
 }
