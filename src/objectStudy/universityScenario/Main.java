@@ -36,12 +36,18 @@ public class Main {
         doori.registrationCourse(dataStructure);
         kori.registrationCourse(dataStructure);
         // 수업시작
-        jiwon.startCourse(dataStructure);*/
-
+        jiwon.startCourse(dataStructure);
         doori.registrationCourse(dataStructure);
         doori.registrationCourse(javaProgramming);
         doori.registrationCourse(philosophyBasic);
         doori.registrationCourse(marxistIdeology);
-        doori.checkSuccessToRegister();
+        doori.checkSuccessToRegister();*/
+
+        doori.registrationCourse(dataStructure);
+        doori.registrationCourse(javaProgramming);
+        doori.registrationCourse(database);
+        doori.registrationCourse(iosProgramming);
+        doori.registrationCourse(machineLearning);
+        computerScience.deleteMajor(computerScience);
     }
 }

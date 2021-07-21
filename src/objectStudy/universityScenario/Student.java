@@ -7,15 +7,16 @@ public class Student {
     int studentId;
     String studentName;
     String courseName;
-    Major major;
     boolean courseAttend;
+    List<Major> major;
     List<Course> courses;
     int grade;
 
-    public Student(int studentId, String studentName, Major major) {
+    public Student(int studentId, String studentName,Major major) {
         this.studentId = studentId;
         this.studentName = studentName;
-        this.major = major;
+        this.major = new ArrayList<Major>();
+        this.major.add(major);
         courses = new ArrayList<Course>();
     }
 
@@ -50,7 +51,7 @@ public class Student {
 
     public boolean checkMajorCourse(Course registerCourse) {
         if (this.courses.size() < 3) {
-            if (this.major.name == registerCourse.major.name) {
+            if (this.major.get(0).name == registerCourse.major.name) {
                 courses.add(registerCourse);
             } else {
                 return false;
@@ -65,7 +66,7 @@ public class Student {
     public void checkSuccessToRegister() {
         int cnt = 0;
         for (int i = 0; i < this.courses.size(); i++) {
-            if (this.major.name == this.courses.get(i).major.name) {
+            if (this.major.get(0).name == this.courses.get(i).major.name) {
                 cnt++;
             }
         }
@@ -76,5 +77,11 @@ public class Student {
         }
     }
 
-
+    // 전공 과목이 사라질 경우 부전공으로 전공 바꾸라고 요구.
+    // List 0 , List 1
+    public void changeMajorToMinor(Student student, Major major){
+        if(student.major.get(0).majorId == major.majorId){
+            System.out.println("전공과목이 사라져 부전공으로 전공 변경 요청");
+        }
+    }
 }

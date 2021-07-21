@@ -37,9 +37,17 @@ public class Course {
         }
     }
 
+    // 학생들 수업 참여 알림
     public void callStudentToAttend() {
         for (Student student : students) {
             student.participationCourse(this);
+        }
+    }
+
+    // 학과에 포함된 학생들에게 부전공 전환요청
+    public void ChangeMajorForStudent(Course course, Major major){
+        for(int i=0; i<course.students.size(); i++){
+            course.students.get(i).changeMajorToMinor(course.students.get(i),major);
         }
     }
 }
